@@ -1,11 +1,14 @@
 package br.edu.infnet.restaurants.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Staff {
@@ -25,17 +28,13 @@ public class Staff {
 	private String lastName;
 
 	@ManyToOne
-	@JoinColumn(name = "staff_role_code", insertable = false, updatable = false)
+	@JoinColumn(name = "staff_idrole_code", insertable = false, updatable = false)
 	private RefStaffRole refStaffRole;
 	
+	@OneToMany(mappedBy = "staff")
+	private List<Meal> meal;
+	
 	public Staff() {
-	}
-
-	public Staff(Integer staffRoleCode, String firstName, String lastName, RefStaffRole refStaffRole) {
-		this.staffRoleCode = staffRoleCode;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.refStaffRole = refStaffRole;
 	}
 
 	public Integer getStaffId() {
@@ -77,5 +76,13 @@ public class Staff {
 	public void setRefStaffRole(RefStaffRole refStaffRole) {
 		this.refStaffRole = refStaffRole;
 	}
-	
+
+	public List<Meal> getMeal() {
+		return meal;
+	}
+
+	public void setMeal(List<Meal> meal) {
+		this.meal = meal;
+	}
+
 }

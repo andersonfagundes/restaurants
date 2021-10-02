@@ -1,41 +1,42 @@
 package br.edu.infnet.restaurants.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "menu_items")
 public class MenuItem {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "menu_item_id")
 	private Integer menuItemId;
-	
+
 	@Column(name = "menu_id")
 	private Integer menuId;
-	
+
 	@Column(name = "menu_item_name")
 	private String MenuItemName;
-	
+
 	@Column(name = "other_datails")
 	private String otherDetails;
-	
+
 	@ManyToOne
-    @JoinColumn(name = "menu_id", insertable = false, updatable = false)
+	@JoinColumn(name = "menu_id", insertable = false, updatable = false)
 	private Menu menu;
 
-	public MenuItem() {
-	}
+	@OneToMany(mappedBy = "menuItem")
+    private List<MealDishe> mealDishe;
 
-	public MenuItem(Integer menuId, String menuItemName, String otherDetails, Menu menu) {
-		this.menuId = menuId;
-		MenuItemName = menuItemName;
-		this.otherDetails = otherDetails;
-		this.menu = menu;
+	public MenuItem() {
 	}
 
 	public Integer getMenuItemId() {
@@ -76,6 +77,14 @@ public class MenuItem {
 
 	public void setMenu(Menu menu) {
 		this.menu = menu;
+	}
+
+	public List<MealDishe> getMealDishe() {
+		return mealDishe;
+	}
+
+	public void setMealDishe(List<MealDishe> mealDishe) {
+		this.mealDishe = mealDishe;
 	}
 	
 }

@@ -32,19 +32,4 @@ public class MenuService {
 		menuRepository.deleteById(menuId);
 	}
 
-	/*public void inscrever(Aluno aluno, Turma turma) {
-		if(aluno.getTurmas() == null) {
-			aluno.setTurmas(new ArrayList<Turma>());
-		}
-		aluno.getTurmas().add(turma);
-		alunoRepository.save(aluno);
-		
-	}*/
-
-	/*
-	public void cancelarInscricao(Aluno aluno, Turma turma) {
-		// TODO Auto-generated method stub
-		
-	}*/
-	
 }

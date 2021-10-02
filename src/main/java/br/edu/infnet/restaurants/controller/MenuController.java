@@ -20,16 +20,6 @@ import br.edu.infnet.restaurants.service.MenuService;
 @RestController
 @RequestMapping("/api/menus")
 public class MenuController {
-
-	/*
-	 * GET, POST, PUT, DELETE 
-	 * get    -> retorna 1 ou retorna uma lista (paginada ou não)
-	 * post   -> inclusão
-	 * put    -> alteração
-	 * delete -> exclusão
-	 * 
-	 * CRUD
-	 */
 	
 	private MenuService menuService;
 	

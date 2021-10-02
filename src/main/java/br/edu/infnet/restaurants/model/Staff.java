@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 public class Staff {
@@ -28,7 +29,7 @@ public class Staff {
 	private String lastName;
 
 	@ManyToOne
-	@JoinColumn(name = "staff_idrole_code", insertable = false, updatable = false)
+	@JoinColumn(name = "staff_role_code", insertable = false, updatable = false)
 	private RefStaffRole refStaffRole;
 	
 	@OneToMany(mappedBy = "staff")

@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,7 +23,7 @@ public class Meal {
 	@Column(name = "customer_id")
 	private Integer customerId;
 
-	@Column(name = "date_od_meal")
+	@Column(name = "date_of_meal")
 	private String dateOfMeal;
 
 	@Column(name = "cost_of_meal")

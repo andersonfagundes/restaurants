@@ -16,7 +16,7 @@ import br.edu.infnet.restaurants.model.MenuItem;
 import br.edu.infnet.restaurants.service.MenuItemService;
 
 @RestController
-@RequestMapping("/api/menuitens")
+@RequestMapping("/api/menuitems")
 public class MenuItemController {
 	
 	private MenuItemService menuItemService;
